@@ -10,32 +10,34 @@ There is only one primary constructor in a Kotlin class whereas secondary constr
  */
 fun main()
 {
-    val acc = AccounteWithPrimaryConstructor(10,"Ahmed",100.0)
+    val acc = AccountWithPrimaryConstructor(10,"Ahmed",100.0)
     println("Account :[${acc.accountNumber}, ${acc.name},${acc.amount}]")
     println("Account :[${acc.accountNumber}, ${acc.name},${acc.amount}]")
     acc.withfraw(10.0)
     println("Account :[${acc.accountNumber}, ${acc.name},${acc.amount}]")
 
-    val acc1 = AccounteWithPrimaryConstructor(11,"Mahmoud",1000.0)
+    val acc1 = AccountWithPrimaryConstructor(11,"Mahmoud",1000.0)
 //    println("Account :[${acc1.accountNumber}, ${acc1.name},${acc1.amount}]")
     println(acc1)
-    var acc3 = AccounteWithSecondaryConstructor(10)
+    var acc3 = AccountWithSecondaryConstructor(10)
     println(acc3)
 //    println("Account :[${acc3.accountNumber}, ${acc3.name},${acc3.amount}]")
-    var acc4 = AccounteWithSecondaryConstructor("Ali")
+    var acc4 = AccountWithSecondaryConstructor("Ali")
     println(acc4)
 //    println("Account :[${acc4.accountNumber}, ${acc4.name},${acc4.amount}]")
-    var acc5 = AccounteWithSecondaryConstructor(100.0)
+    var acc5 = AccountWithSecondaryConstructor(100.0)
     println(acc5)
     //println("Account :[${acc5.accountNumber}, ${acc5.name},${acc5.amount}]")
-    var acc6 = AccounteWithSecondaryConstructor(15,"Test",100.0)
+    var acc6 = AccountWithSecondaryConstructor(15,"Test",100.0)
+    acc6.deposit(15.0)
+    acc6.amount= -5000.0
     //println("Account :[${acc6.accountNumber}, ${acc6.name},${acc6.amount}]")
 
     println(acc6)  // the same as  println(acc6.toString())
 
 }
 // primary constructor
-class AccounteWithPrimaryConstructor constructor(number:Int = 0,name:String= "",amount:Double = 0.0){
+class AccountWithPrimaryConstructor constructor(number:Int = 0,name:String= "",amount:Double = 0.0){
     var accountNumber:Int
     var name:String
     var amount:Double
@@ -75,7 +77,7 @@ class AccounteWithPrimaryConstructor constructor(number:Int = 0,name:String= "",
 
 }
 
-class AccounteWithSecondaryConstructor {
+class AccountWithSecondaryConstructor {
     var accountNumber:Int = 0
     var name:String = ""
     var amount:Double = 0.0

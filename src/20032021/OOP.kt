@@ -9,6 +9,8 @@ fun main()
     var age:Int = 25
     var id:Int = 154254
 
+    var mo = Modifiers()
+    mo.a = 10
 
     var name1:String = "Ahmed"
     var age1:Int = 25
