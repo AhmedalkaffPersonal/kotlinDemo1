@@ -1,4 +1,6 @@
 package `22032021`
+
+
 /*
  An abstract class cannot be instantiated directly.
  Means, we cannot create object of abstract class directly
@@ -17,20 +19,23 @@ abstract class Item{
         println("abstract constructor")
     }
     var x = 0
-    abstract  fun doSomething()
-    fun finalNonAbstract(){
+    abstract  fun doSomething()         // abstract function: function without body
+    fun finalNonAbstract(){             // can't be overridden
         println("Final non-abstract function in abstract class")
     }
-    open fun openNonAbstract(){
+    open fun openNonAbstract(){         // can be overridden
         println("Open non-abstract function in abstract class")
-
     }
 }
 class ChildFromAbstract: Item() {
     override fun doSomething() {
         println("doSomething")
     }
-
+    // Can not override non-open (final function)
+//    override fun finalNonAbstract(){
+//
+//    }
+//
     override fun openNonAbstract() {
         println("ChildFromAbstract:openNonAbstract")
     }
@@ -38,5 +43,10 @@ class ChildFromAbstract: Item() {
 }
 fun main() {
     val a = ChildFromAbstract()
+    a.doSomething()
+    a.openNonAbstract()
+    a.finalNonAbstract()
 
+  //  val abs = Item() // Error
+//    abs.doSomething()
 }
