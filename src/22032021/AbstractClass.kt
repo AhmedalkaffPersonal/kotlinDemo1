@@ -1,6 +1,4 @@
 package `22032021`
-
-
 /*
  An abstract class cannot be instantiated directly.
  Means, we cannot create object of abstract class directly
